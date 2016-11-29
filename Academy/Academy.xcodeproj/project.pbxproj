@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F26A001F1DEDCC9100832CDE /* DatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A001E1DEDCC9100832CDE /* DatModel.swift */; };
+		F26A00231DEDCE2C00832CDE /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A00221DEDCE2C00832CDE /* EventTableViewCell.swift */; };
+		F26A00261DEDDB8600832CDE /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A00251DEDDB8600832CDE /* UserTableViewCell.swift */; };
+		F26A00281DEDDB8F00832CDE /* LectureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A00271DEDDB8F00832CDE /* LectureTableViewCell.swift */; };
 		F278807A1DED906F001B9603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27880791DED906F001B9603 /* AppDelegate.swift */; };
 		F278807F1DED906F001B9603 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F278807D1DED906F001B9603 /* Main.storyboard */; };
 		F27880811DED906F001B9603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F27880801DED906F001B9603 /* Assets.xcassets */; };
@@ -22,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F26A001E1DEDCC9100832CDE /* DatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatModel.swift; sourceTree = "<group>"; };
+		F26A00221DEDCE2C00832CDE /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		F26A00251DEDDB8600832CDE /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		F26A00271DEDDB8F00832CDE /* LectureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureTableViewCell.swift; sourceTree = "<group>"; };
 		F27880761DED906F001B9603 /* Academy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Academy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F27880791DED906F001B9603 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F278807E1DED906F001B9603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,6 +57,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F26A00241DEDCE3500832CDE /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				F26A00221DEDCE2C00832CDE /* EventTableViewCell.swift */,
+				F26A00251DEDDB8600832CDE /* UserTableViewCell.swift */,
+				F26A00271DEDDB8F00832CDE /* LectureTableViewCell.swift */,
+			);
+			name = TableViewCells;
+			sourceTree = "<group>";
+		};
 		F278806D1DED906F001B9603 = {
 			isa = PBXGroup;
 			children = (
@@ -70,8 +88,10 @@
 			children = (
 				F278808D1DED93A6001B9603 /* Extensions */,
 				F278809E1DED9652001B9603 /* Controllers */,
+				F26A00241DEDCE3500832CDE /* TableViewCells */,
 				F27880791DED906F001B9603 /* AppDelegate.swift */,
 				F278807D1DED906F001B9603 /* Main.storyboard */,
+				F26A001E1DEDCC9100832CDE /* DatModel.swift */,
 				F27880801DED906F001B9603 /* Assets.xcassets */,
 				F27880821DED906F001B9603 /* LaunchScreen.storyboard */,
 				F27880851DED906F001B9603 /* Info.plist */,
@@ -173,9 +193,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F26A00281DEDDB8F00832CDE /* LectureTableViewCell.swift in Sources */,
 				F278809B1DED9632001B9603 /* LoginViewController.swift in Sources */,
+				F26A00231DEDCE2C00832CDE /* EventTableViewCell.swift in Sources */,
 				F27880951DED9616001B9603 /* ProfileViewController.swift in Sources */,
 				F27880991DED9629001B9603 /* LectureViewController.swift in Sources */,
+				F26A00261DEDDB8600832CDE /* UserTableViewCell.swift in Sources */,
+				F26A001F1DEDCC9100832CDE /* DatModel.swift in Sources */,
 				F27880931DED960E001B9603 /* NotificationsViewController.swift in Sources */,
 				F27880971DED9622001B9603 /* EventViewController.swift in Sources */,
 				F278809D1DED9642001B9603 /* AddLectureViewController.swift in Sources */,
