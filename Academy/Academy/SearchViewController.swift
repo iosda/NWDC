@@ -12,6 +12,7 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
 
     /* outlets and variables */
     @IBOutlet weak var searchTableView: UITableView!
+    
     let userCellHeight:CGFloat = 93
     let lectureCellHeight:CGFloat = 140
     let cellSpacingHeigth: CGFloat = 16
@@ -89,15 +90,20 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
         headerView.backgroundColor = UIColor.clear
         return headerView
     }
-    
-    //title of headers
+   
+    //title section
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
+       tableView.tableHeaderView?.sizeToFit()
+        switch section {
+        case 0:
             return "USERS"
-        }
-        else {
+        case 1:
             return "LECTURES"
+            
+        default:
+            return ""
         }
+        tableView.reloadSectionIndexTitles()
     }
-    
+   
 }
