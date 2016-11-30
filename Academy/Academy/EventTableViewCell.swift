@@ -11,10 +11,11 @@ import UIKit
 class EventTableViewCell: UITableViewCell {
 
     /* outlets and variables */
-    @IBOutlet weak var titleLabel: UILabel?
-    @IBOutlet weak var dateLabel: UILabel?
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentCellView: UIView!
     
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     
     override func awakeFromNib() {
@@ -28,13 +29,23 @@ class EventTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func config(){
-        self.contentCellView.backgroundColor = UIColor(red:0.93, green:0.88, blue:0.77, alpha:0.6)
-        self.contentCellView.layer.cornerRadius = self.contentCellView.bounds.height*0.2
+    func config(forEvent event: Event){
+        self.contentCellView.backgroundColor = UIColor.clear
 
-        self.clipsToBounds = true
-        self.titleLabel?.text = "Event Name"
-        self.dateLabel?.text = "N/A"
+        self.contentCellView.clipsToBounds = true
+
+        
+        self.titleLabel.text = event.title
+        
+        self.contentCellView.layer.cornerRadius = min(self.contentCellView.bounds.width, self.contentCellView.bounds.height) * 0.1
+       
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .short
+
+        self.dateLabel.text = dateFormatter.string(from: event.date)
+        
+        self.backgroundImage.image = event.image
     }
 
 }

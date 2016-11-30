@@ -34,8 +34,8 @@ class UserTableViewCell: UITableViewCell {
         
         /* background corner radius to the cell */
         self.backgroundColor = UIColor.clear
-        self.userCellView.layer.cornerRadius = self.bounds.height*0.2
-        self.userCellView.backgroundColor =  UIColor(red:0.93, green:0.88, blue:0.77, alpha:0.6)
+        self.userCellView.layer.cornerRadius = self.bounds.height*0.1
+        self.userCellView.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.95, alpha:0.4)
         
         /*adding shadow to a cell
         self.layer.shadowColor = UIColor.black.cgColor
@@ -47,7 +47,8 @@ class UserTableViewCell: UITableViewCell {
         
         /* fake data config */
         self.profileImage.layer.cornerRadius = self.profileImage.bounds.height/2
-        self.profileImage.contentMode = .scaleAspectFit
+        //self.profileImage.contentMode = .scaleAspectFit
+        self.profileImage.clipsToBounds = true
         self.profileImage.image = UIImage(named:"GiacomoIcon")
         
         self.nameLabel.text = "Giacomo Leopizzi"

@@ -29,11 +29,13 @@ class NotificationTableViewCell: UITableViewCell {
      
     func config() {
         self.backgroundColor = UIColor.clear
-        self.containerView.backgroundColor = UIColor(red:0.93, green:0.88, blue:0.77, alpha:0.6)
-        self.containerView.layer.cornerRadius = self.containerView.bounds.height*0.2
+        self.containerView.backgroundColor = UIColor.clear
         
+        self.containerView.layer.cornerRadius = min(self.containerView.bounds.width, self.containerView.bounds.height) * 0.1
+        self.containerView.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.95, alpha:0.4)
+
         self.notificationLabel.text = "The Vapor lecture has been added on Monday at 16:00 in the Board Room"
-        
+    
         self.notificationImageView.layer.cornerRadius = self.notificationImageView.bounds.height/2
         self.notificationImageView.contentMode = .scaleAspectFit
         

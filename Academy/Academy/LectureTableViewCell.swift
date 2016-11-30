@@ -36,8 +36,8 @@ class LectureTableViewCell: UITableViewCell {
     func config() {
         self.backgroundColor = UIColor.clear
         
-        self.lectureCellView.layer.cornerRadius = self.bounds.height*0.2
-        self.lectureCellView.backgroundColor = UIColor(red:0.93, green:0.88, blue:0.77, alpha:0.6)
+        self.lectureCellView.layer.cornerRadius = self.bounds.height*0.1
+        self.lectureCellView.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.95, alpha:0.4)
         
         /*
         self.layer.shadowColor = UIColor.black.cgColor
@@ -47,6 +47,20 @@ class LectureTableViewCell: UITableViewCell {
         self.layer.masksToBounds = false
         */
         
+        self.user1.clipsToBounds = true
+        self.user2.clipsToBounds = true
+        self.user3.clipsToBounds = true
+        self.user4.clipsToBounds = true
+        self.user5.clipsToBounds = true
+//
+//        self.user1.contentMode = .scaleAspectFit
+//        self.user2.contentMode = .scaleAspectFit
+//        self.user3.contentMode = .scaleAspectFit
+//        self.user4.contentMode = .scaleAspectFit
+//        self.user5.contentMode = .scaleAspectFit
+        
+        self.user1.layer.masksToBounds = true
+
         self.user1.layer.cornerRadius = self.user1.bounds.height/2
         self.user2.layer.cornerRadius = self.user2.bounds.height/2
         self.user3.layer.cornerRadius = self.user3.bounds.height/2

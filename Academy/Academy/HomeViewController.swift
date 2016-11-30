@@ -13,10 +13,11 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     /* outlets and variables */
     @IBOutlet weak var homeTableView: UITableView!
     var numberOfCells = 8
-    let cellSpacingHeight: CGFloat = 8
+    let cellSpacingHeight: CGFloat = 4
     let cellHeight: CGFloat = 140
     
-    
+    let screenSize: CGRect = UIScreen.main.bounds
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +25,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         /* adding background color */
         homeTableView.backgroundColor = UIColor.clear
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,37 +38,44 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     // Number of sections
    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+//    // Make the background color show through
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let headerView = UIView()
+//        headerView.frame.size.height = 8
+//        headerView.backgroundColor = UIColor.clear
+//        return headerView
+//    }
+//    
+    // rows
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberOfCells
     }
     
-    // Make the background color show through
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.frame.size.height = 8
-        headerView.backgroundColor = UIColor.clear
-        return headerView
-    }
-    
-    // rows
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 8
     }
     
     //custom cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventTableViewCell
-        cell.config()
+        
+        let testEvent = Event(title: "Baffi gratis", image: UIImage(named: "giacomoIcon")!, date: Date())
+        
+        cell.config(forEvent:  testEvent)
         return cell
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cellHeight
+        return screenSize.height*0.25
     }
     
     // Set the spacing between sections
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return cellSpacingHeight
+        return 8
     }
     
     // method to run when table view cell is tapped

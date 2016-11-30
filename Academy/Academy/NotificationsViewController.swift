@@ -16,6 +16,8 @@ class NotificationsViewController: UIViewController,UITableViewDelegate,UITableV
     var numberOfCells = 6
     var notificationTime: Bool = false
     
+    let screenSize: CGRect = UIScreen.main.bounds
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,5 +55,8 @@ class NotificationsViewController: UIViewController,UITableViewDelegate,UITableV
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return screenSize.height*0.20
+    }
     
 }

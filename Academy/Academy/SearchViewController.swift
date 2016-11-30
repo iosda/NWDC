@@ -13,11 +13,13 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
     /* outlets and variables */
     @IBOutlet weak var searchTableView: UITableView!
     
-    let userCellHeight:CGFloat = 93
-    let lectureCellHeight:CGFloat = 140
+    let userCellHeight:CGFloat = 160
+    let lectureCellHeight:CGFloat = 200
     let sectionSpacingHeigth: CGFloat = 32
     var numberOfUsers = 2
     var numberOfLectures = 3
+    
+    let screenSize: CGRect = UIScreen.main.bounds
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,10 +64,10 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-        return userCellHeight
+        return screenSize.height*0.25
         }
         else {
-            return lectureCellHeight
+            return screenSize.height*0.27
         }
     }
     

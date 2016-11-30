@@ -24,6 +24,7 @@
 		F278809B1DED9632001B9603 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F278809A1DED9632001B9603 /* LoginViewController.swift */; };
 		F278809D1DED9642001B9603 /* AddLectureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F278809C1DED9642001B9603 /* AddLectureViewController.swift */; };
 		F2D764231DEEEB9D0069C34A /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D764221DEEEB9D0069C34A /* NotificationTableViewCell.swift */; };
+		F2D764271DEF33280069C34A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D764261DEF33280069C34A /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		F278809A1DED9632001B9603 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F278809C1DED9642001B9603 /* AddLectureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLectureViewController.swift; sourceTree = "<group>"; };
 		F2D764221DEEEB9D0069C34A /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationTableViewCell.swift; path = ../NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		F2D764261DEF33280069C34A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				F26A00241DEDCE3500832CDE /* Cells */,
 				F27880791DED906F001B9603 /* AppDelegate.swift */,
 				F278807D1DED906F001B9603 /* Main.storyboard */,
+				F2D764261DEF33280069C34A /* Event.swift */,
 				F26A001E1DEDCC9100832CDE /* DatModel.swift */,
 				F27880801DED906F001B9603 /* Assets.xcassets */,
 				F27880821DED906F001B9603 /* LaunchScreen.storyboard */,
@@ -201,6 +204,7 @@
 				F26A00281DEDDB8F00832CDE /* LectureTableViewCell.swift in Sources */,
 				F278809B1DED9632001B9603 /* LoginViewController.swift in Sources */,
 				F26A00231DEDCE2C00832CDE /* EventTableViewCell.swift in Sources */,
+				F2D764271DEF33280069C34A /* Event.swift in Sources */,
 				F27880951DED9616001B9603 /* ProfileViewController.swift in Sources */,
 				F27880991DED9629001B9603 /* LectureViewController.swift in Sources */,
 				F26A00261DEDDB8600832CDE /* UserTableViewCell.swift in Sources */,
