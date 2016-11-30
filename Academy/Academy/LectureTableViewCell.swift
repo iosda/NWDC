@@ -19,7 +19,8 @@ class LectureTableViewCell: UITableViewCell {
     @IBOutlet weak var user3: UIImageView!
     @IBOutlet weak var user4: UIImageView!
     @IBOutlet weak var user5: UIImageView!
-    
+    @IBOutlet weak var lectureCellView: UIView!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,12 +34,18 @@ class LectureTableViewCell: UITableViewCell {
     }
 
     func config() {
-        self.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.95, alpha:1.0)
-        self.layer.cornerRadius = 8
+        self.backgroundColor = UIColor.clear
+        
+        self.lectureCellView.layer.cornerRadius = self.bounds.height*0.2
+        self.lectureCellView.backgroundColor = UIColor(red:0.93, green:0.88, blue:0.77, alpha:0.6)
+        
+        /*
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = 0.5
         self.layer.shadowOffset = CGSize(width: -2, height: 2)
         self.clipsToBounds = true
+        self.layer.masksToBounds = false
+        */
         
         self.user1.layer.cornerRadius = self.user1.bounds.height/2
         self.user2.layer.cornerRadius = self.user2.bounds.height/2

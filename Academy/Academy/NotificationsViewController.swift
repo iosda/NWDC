@@ -8,12 +8,20 @@
 
 import UIKit
 
-class NotificationsViewController: UIViewController {
+class NotificationsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
+    
+    /* outlets and variables */
+    @IBOutlet weak var notificationsTableView: UITableView!
+    var numberOfCells = 6
+    var notificationTime: Bool = false
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        notificationsTableView.backgroundColor = UIColor.clear
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +30,28 @@ class NotificationsViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return numberOfCells
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "notifCell", for: indexPath) as! NotificationTableViewCell
+        
+        cell.config()
+        
+        if notificationTime == true {
+            cell.notificationImageView.image = UIImage(named:"notificationTimeImage")
+        }
+        else {
+            cell.notificationImageView.image = UIImage(named: "notificationFileImage")
+        }
+        
+        return cell
+    }
+    
+    
 }

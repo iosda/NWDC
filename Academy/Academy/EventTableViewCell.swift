@@ -13,6 +13,7 @@ class EventTableViewCell: UITableViewCell {
     /* outlets and variables */
     @IBOutlet weak var titleLabel: UILabel?
     @IBOutlet weak var dateLabel: UILabel?
+    @IBOutlet weak var contentCellView: UIView!
     
     
     
@@ -28,11 +29,9 @@ class EventTableViewCell: UITableViewCell {
     }
     
     func config(){
-        self.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.95, alpha:1.0)
-        self.layer.cornerRadius = 8
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOpacity = 0.5
-        self.layer.shadowOffset = CGSize(width: -1, height: 1)
+        self.contentCellView.backgroundColor = UIColor(red:0.93, green:0.88, blue:0.77, alpha:0.6)
+        self.contentCellView.layer.cornerRadius = self.contentCellView.bounds.height*0.2
+
         self.clipsToBounds = true
         self.titleLabel?.text = "Event Name"
         self.dateLabel?.text = "N/A"

@@ -13,7 +13,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     /* outlets and variables */
     @IBOutlet weak var homeTableView: UITableView!
     var numberOfCells = 8
-    let cellSpacingHeight: CGFloat = 16
+    let cellSpacingHeight: CGFloat = 8
     let cellHeight: CGFloat = 140
     
     
@@ -42,6 +42,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     // Make the background color show through
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
+        headerView.frame.size.height = 8
         headerView.backgroundColor = UIColor.clear
         return headerView
     }

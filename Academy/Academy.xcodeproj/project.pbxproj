@@ -23,6 +23,7 @@
 		F27880991DED9629001B9603 /* LectureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27880981DED9629001B9603 /* LectureViewController.swift */; };
 		F278809B1DED9632001B9603 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F278809A1DED9632001B9603 /* LoginViewController.swift */; };
 		F278809D1DED9642001B9603 /* AddLectureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F278809C1DED9642001B9603 /* AddLectureViewController.swift */; };
+		F2D764231DEEEB9D0069C34A /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D764221DEEEB9D0069C34A /* NotificationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		F27880981DED9629001B9603 /* LectureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureViewController.swift; sourceTree = "<group>"; };
 		F278809A1DED9632001B9603 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F278809C1DED9642001B9603 /* AddLectureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLectureViewController.swift; sourceTree = "<group>"; };
+		F2D764221DEEEB9D0069C34A /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationTableViewCell.swift; path = ../NotificationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F26A00241DEDCE3500832CDE /* TableViewCells */ = {
+		F26A00241DEDCE3500832CDE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				F26A00221DEDCE2C00832CDE /* EventTableViewCell.swift */,
+				F2D764221DEEEB9D0069C34A /* NotificationTableViewCell.swift */,
 				F26A00251DEDDB8600832CDE /* UserTableViewCell.swift */,
 				F26A00271DEDDB8F00832CDE /* LectureTableViewCell.swift */,
 			);
-			name = TableViewCells;
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		F278806D1DED906F001B9603 = {
@@ -88,7 +91,7 @@
 			children = (
 				F278808D1DED93A6001B9603 /* Extensions */,
 				F278809E1DED9652001B9603 /* Controllers */,
-				F26A00241DEDCE3500832CDE /* TableViewCells */,
+				F26A00241DEDCE3500832CDE /* Cells */,
 				F27880791DED906F001B9603 /* AppDelegate.swift */,
 				F278807D1DED906F001B9603 /* Main.storyboard */,
 				F26A001E1DEDCC9100832CDE /* DatModel.swift */,
@@ -153,6 +156,7 @@
 				TargetAttributes = {
 					F27880751DED906F001B9603 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = Z93BPG6NCF;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -193,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2D764231DEEEB9D0069C34A /* NotificationTableViewCell.swift in Sources */,
 				F26A00281DEDDB8F00832CDE /* LectureTableViewCell.swift in Sources */,
 				F278809B1DED9632001B9603 /* LoginViewController.swift in Sources */,
 				F26A00231DEDCE2C00832CDE /* EventTableViewCell.swift in Sources */,
@@ -328,6 +333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z93BPG6NCF;
 				INFOPLIST_FILE = Academy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.iosdeveloperacademy.Academy;
@@ -340,6 +346,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z93BPG6NCF;
 				INFOPLIST_FILE = Academy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.iosdeveloperacademy.Academy;

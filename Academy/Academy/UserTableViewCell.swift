@@ -16,7 +16,7 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var classLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
-    
+    @IBOutlet weak var userCellView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,13 +31,21 @@ class UserTableViewCell: UITableViewCell {
 
     
     func config() {
-        self.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.95, alpha:1.0)
-        self.layer.cornerRadius = 8
+        
+        /* background corner radius to the cell */
+        self.backgroundColor = UIColor.clear
+        self.userCellView.layer.cornerRadius = self.bounds.height*0.2
+        self.userCellView.backgroundColor =  UIColor(red:0.93, green:0.88, blue:0.77, alpha:0.6)
+        
+        /*adding shadow to a cell
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = 0.5
         self.layer.shadowOffset = CGSize(width: -1, height: 1)
         self.clipsToBounds = true
+        self.layer.masksToBounds = false
+        */
         
+        /* fake data config */
         self.profileImage.layer.cornerRadius = self.profileImage.bounds.height/2
         self.profileImage.contentMode = .scaleAspectFit
         self.profileImage.image = UIImage(named:"GiacomoIcon")

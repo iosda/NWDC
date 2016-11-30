@@ -15,7 +15,7 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     let userCellHeight:CGFloat = 93
     let lectureCellHeight:CGFloat = 140
-    let cellSpacingHeigth: CGFloat = 16
+    let sectionSpacingHeigth: CGFloat = 32
     var numberOfUsers = 2
     var numberOfLectures = 3
     
@@ -71,7 +71,7 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     // Set the spacing between sections
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 16
+        return sectionSpacingHeigth
     }
     
     // method to run when table view cell is tapped
@@ -83,14 +83,14 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
-
+/*
     // Make the background color show through
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = UIColor.clear
         return headerView
     }
-   
+  */ 
     //title section
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
        tableView.tableHeaderView?.sizeToFit()
@@ -103,7 +103,6 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
         default:
             return ""
         }
-        tableView.reloadSectionIndexTitles()
     }
    
 }
