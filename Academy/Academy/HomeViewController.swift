@@ -21,8 +21,6 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
         /* adding background color */
         homeTableView.backgroundColor = UIColor.clear
         
@@ -41,15 +39,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return 1
     }
     
-//    // Make the background color show through
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = UIView()
-//        headerView.frame.size.height = 8
-//        headerView.backgroundColor = UIColor.clear
-//        return headerView
-//    }
-//    
-    // rows
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberOfCells
     }
