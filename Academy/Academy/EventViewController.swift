@@ -10,12 +10,16 @@ import UIKit
 
 class EventViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 
-    
+    // outlets and variables
     @IBOutlet weak var dateCollectionView: UICollectionView!
     @IBOutlet weak var lecturesTableView: UITableView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var firstLine: UIView!
+    @IBOutlet weak var secondLine: UIView!
+    @IBOutlet weak var descriptionTextView: UITextView!
     
+    @IBOutlet weak var speakersLabel: UILabel!
     let screenSize = UIScreen.main.bounds
-    
     var hasMoved : Bool = false
     
     var numberOfDays = 3
@@ -23,17 +27,47 @@ class EventViewController: UIViewController,UICollectionViewDelegate,UICollectio
     var nameDays = ["M","T","W"]
     
     
+    //animation
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.dateCollectionView.alpha = 0.0
+        self.lecturesTableView.alpha = 0.0
+        self.titleLabel.alpha = 0.0
+        self.firstLine.alpha = 0.0
+        self.secondLine.alpha = 0.0
+        self.descriptionTextView.alpha = 0.0
+        self.speakersLabel.alpha = 0.0
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        UIView.animate(withDuration: 0.2, animations: { self.titleLabel.alpha = 1.0 })
+        
+        UIView.animate(withDuration: 0.3, animations: { self.descriptionTextView.alpha = 1.0 })
+        
+        UIView.animate(withDuration: 0.4, animations: { self.firstLine.alpha = 1.0 })
+        
+        UIView.animate(withDuration: 0.5, animations: { self.dateCollectionView.alpha = 1.0 })
+        
+        UIView.animate(withDuration: 0.6, animations: { self.secondLine.alpha = 1.0 })
+        
+        UIView.animate(withDuration: 0.7, animations: { self.speakersLabel.alpha = 1.0 })
+        
+        UIView.animate(withDuration: 0.2, animations: { self.lecturesTableView.alpha = 1.0 })
+        
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-//
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.navigationItem.title = "Event Page"
+        self.navigationItem.titleView?.tintColor = UIColor(red: 142/255, green: 142/255, blue: 149/255, alpha: 1.0)
+
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -73,24 +107,17 @@ class EventViewController: UIViewController,UICollectionViewDelegate,UICollectio
         let smartInset = screenSize.width - 15
         return UIEdgeInsetsMake(0, smartInset, 0, smartInset)
     }
-   /*
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let inset = collectionView.bounds.width * (1.0 / CGFloat(numberOfDays) + 1.0)
-        
-        return UIEdgeInsetsMake(0, inset, 0, inset)
-    }*/
-//    
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-//        
-//        let totalCellWidth = CellWidth * CellCount
-//        let totalSpacingWidth = CellSpacing * (CellCount - 1)
-//        
-//        let leftInset = (collectionViewWidth - CGFloat(totalCellWidth + totalSpacingWidth)) / 2;
-//        let rightInset = leftInset
-//        
-//        return UIEdgeInsetsMake(0, leftInset, 0, rightInset)
-//    }
-//    
+    
+    // cell animation
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+      cell.alpha = 0.0
+        UIView.animate(withDuration: 1.0, animations: {
+            cell.alpha = 1.0
+        })
+    }
+ 
+    
     
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return 5

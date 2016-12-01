@@ -30,7 +30,7 @@ class NotificationsViewController: UIViewController,UITableViewDelegate,UITableV
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        navigationItem.title = "Notifications"
+        self.navigationController?.visibleViewController?.navigationItem.title = "Notifications"
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,6 +64,22 @@ class NotificationsViewController: UIViewController,UITableViewDelegate,UITableV
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return screenSize.height*0.15
+    }
+    
+    
+    // animation
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        cell.alpha = 0.0
+        //
+        //       let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 10, 0)
+        //        cell.layer.transform = rotationTransform
+        //
+        UIView.animate(withDuration: 1.0, animations: {
+            cell.alpha = 1.0
+            
+            //cell.layer.transform = CATransform3DIdentity
+        })
     }
     
 }

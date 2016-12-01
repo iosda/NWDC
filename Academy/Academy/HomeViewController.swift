@@ -24,6 +24,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         super.viewDidLoad()
 
         /* adding background color */
+        
         homeTableView.backgroundColor = UIColor.clear
         
     }
@@ -31,12 +32,23 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        navigationItem.title = "Home"
+        self.navigationController?.visibleViewController?.navigationItem.title = "Home"
+        
+        UIView.animate(withDuration: 1.0, animations: {
+            self.homeTableView.alpha = 1.0
+        })
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    /* animation test */
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        homeTableView.alpha = 0.0
     }
     
     
@@ -60,7 +72,9 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventTableViewCell
         
-        let testEvent = Event(title: "Baffi gratis", image: UIImage(named: "giacomoIcon")!, date: Date())
+        
+        
+        let testEvent = Event(title: "Share Knowledge", image: UIImage(named: "giacomoIcon")!, date: Date())
         
         cell.config(forEvent:  testEvent)
         return cell
@@ -90,4 +104,22 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         return nil
     }
+    
+    //animation
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+       
+        cell.alpha = 0.0
+//        
+//       let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 10, 0)
+//        cell.layer.transform = rotationTransform
+//        
+        UIView.animate(withDuration: 1.0, animations: {
+            cell.alpha = 1.0
+            
+            //cell.layer.transform = CATransform3DIdentity
+        })
+    }
+    
+    
 }

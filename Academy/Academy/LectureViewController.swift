@@ -14,6 +14,9 @@ class LectureViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.navigationController?.navigationItem.title = "Lecture"
+        self.navigationItem.title = "Lecture"
     }
 
     override func didReceiveMemoryWarning() {
