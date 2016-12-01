@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonalView: UIView,UITableViewDataSource,UITableViewDelegate {
+class PersonalView: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     func numberOfSections(in tableView: UITableView) -> Int {
        return 1

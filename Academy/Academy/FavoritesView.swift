@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavoritesView: UIView,UITableViewDelegate,UITableViewDataSource {
+class FavoritesView: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -47,7 +47,7 @@ class UserTableViewCell: UITableViewCell {
         
         /* fake data config */
         self.profileImage.layer.cornerRadius = self.profileImage.bounds.height/2
-        //self.profileImage.contentMode = .scaleAspectFit
+       // self.profileImage.contentMode = .scaleAspectFill
         self.profileImage.clipsToBounds = true
         self.profileImage.image = UIImage(named:"GiacomoIcon")
         

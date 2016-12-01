@@ -11,6 +11,8 @@
 		F26A00231DEDCE2C00832CDE /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A00221DEDCE2C00832CDE /* EventTableViewCell.swift */; };
 		F26A00261DEDDB8600832CDE /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A00251DEDDB8600832CDE /* UserTableViewCell.swift */; };
 		F26A00281DEDDB8F00832CDE /* LectureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A00271DEDDB8F00832CDE /* LectureTableViewCell.swift */; };
+		F274C6C41DF074C400886924 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F274C6C31DF074C400886924 /* DateCollectionViewCell.swift */; };
+		F274C6C61DF0762400886924 /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F274C6C51DF0762400886924 /* UIButton-Extension.swift */; };
 		F278807A1DED906F001B9603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27880791DED906F001B9603 /* AppDelegate.swift */; };
 		F278807F1DED906F001B9603 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F278807D1DED906F001B9603 /* Main.storyboard */; };
 		F27880811DED906F001B9603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F27880801DED906F001B9603 /* Assets.xcassets */; };
@@ -27,8 +29,6 @@
 		F2D764271DEF33280069C34A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D764261DEF33280069C34A /* Event.swift */; };
 		F2F360BC1DF03D860040CCB9 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F360BB1DF03D860040CCB9 /* FavoritesView.swift */; };
 		F2F360BE1DF03D8D0040CCB9 /* PersonalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F360BD1DF03D8D0040CCB9 /* PersonalView.swift */; };
-		F2F360C11DF03E240040CCB9 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F360C01DF03E240040CCB9 /* FavoritesTableViewCell.swift */; };
-		F2F360C31DF03E2D0040CCB9 /* PersonalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F360C21DF03E2D0040CCB9 /* PersonalTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +36,8 @@
 		F26A00221DEDCE2C00832CDE /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		F26A00251DEDDB8600832CDE /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		F26A00271DEDDB8F00832CDE /* LectureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureTableViewCell.swift; sourceTree = "<group>"; };
+		F274C6C31DF074C400886924 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
+		F274C6C51DF0762400886924 /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		F27880761DED906F001B9603 /* Academy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Academy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F27880791DED906F001B9603 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F278807E1DED906F001B9603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,8 +56,6 @@
 		F2D764261DEF33280069C34A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F2F360BB1DF03D860040CCB9 /* FavoritesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		F2F360BD1DF03D8D0040CCB9 /* PersonalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalView.swift; sourceTree = "<group>"; };
-		F2F360C01DF03E240040CCB9 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
-		F2F360C21DF03E2D0040CCB9 /* PersonalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +76,7 @@
 				F2D764221DEEEB9D0069C34A /* NotificationTableViewCell.swift */,
 				F26A00251DEDDB8600832CDE /* UserTableViewCell.swift */,
 				F26A00271DEDDB8F00832CDE /* LectureTableViewCell.swift */,
-				F2F360C01DF03E240040CCB9 /* FavoritesTableViewCell.swift */,
-				F2F360C21DF03E2D0040CCB9 /* PersonalTableViewCell.swift */,
+				F274C6C31DF074C400886924 /* DateCollectionViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -119,6 +118,7 @@
 		F278808D1DED93A6001B9603 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F274C6C51DF0762400886924 /* UIButton-Extension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -220,8 +220,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F274C6C61DF0762400886924 /* UIButton-Extension.swift in Sources */,
 				F2D764231DEEEB9D0069C34A /* NotificationTableViewCell.swift in Sources */,
-				F2F360C11DF03E240040CCB9 /* FavoritesTableViewCell.swift in Sources */,
 				F26A00281DEDDB8F00832CDE /* LectureTableViewCell.swift in Sources */,
 				F278809B1DED9632001B9603 /* LoginViewController.swift in Sources */,
 				F26A00231DEDCE2C00832CDE /* EventTableViewCell.swift in Sources */,
@@ -230,7 +230,6 @@
 				F2F360BE1DF03D8D0040CCB9 /* PersonalView.swift in Sources */,
 				F27880991DED9629001B9603 /* LectureViewController.swift in Sources */,
 				F26A00261DEDDB8600832CDE /* UserTableViewCell.swift in Sources */,
-				F2F360C31DF03E2D0040CCB9 /* PersonalTableViewCell.swift in Sources */,
 				F26A001F1DEDCC9100832CDE /* DatModel.swift in Sources */,
 				F27880931DED960E001B9603 /* NotificationsViewController.swift in Sources */,
 				F27880971DED9622001B9603 /* EventViewController.swift in Sources */,
@@ -238,6 +237,7 @@
 				F2F360BC1DF03D860040CCB9 /* FavoritesView.swift in Sources */,
 				F278807A1DED906F001B9603 /* AppDelegate.swift in Sources */,
 				F27880911DED9608001B9603 /* SearchViewController.swift in Sources */,
+				F274C6C41DF074C400886924 /* DateCollectionViewCell.swift in Sources */,
 				F278808F1DED9602001B9603 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

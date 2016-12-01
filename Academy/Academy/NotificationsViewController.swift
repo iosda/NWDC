@@ -25,6 +25,13 @@ class NotificationsViewController: UIViewController,UITableViewDelegate,UITableV
         // Do any additional setup after loading the view.
         notificationsTableView.backgroundColor = UIColor.clear
     }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        navigationItem.title = "Notifications"
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -56,7 +63,7 @@ class NotificationsViewController: UIViewController,UITableViewDelegate,UITableV
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return screenSize.height*0.20
+        return screenSize.height*0.15
     }
     
 }

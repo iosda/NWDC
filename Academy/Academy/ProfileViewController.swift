@@ -8,45 +8,82 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     /* outlets and variables */
     @IBOutlet weak var segmentControl: UISegmentedControl!
     let screenSize = UIScreen.main.bounds
-    @IBOutlet weak var favoritesView: UIView!
-    @IBOutlet weak var personalView: UIView!
+    @IBOutlet weak var profileTableView: UITableView!
+    @IBOutlet weak var profileImage: UIImageView!
     
+    var numberOfCells = 6
+    
+    var showedLectures : [Lecture] = []
+    var user = User(name: "Giacomo Leopizzi", image: UIImage(named: "giacomoIcon")!)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //setting up the segment control frame
         segmentControl.frame.size.height = screenSize.height*0.06
-        segmentControl.frame.size.width = screenSize.width*0.7
+        
+        //setting up the user informations
+        profileImage.layer.cornerRadius = profileImage.bounds.height/2
+        profileImage.contentMode = .scaleAspectFill
+        profileImage.image = user.image
         
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        navigationItem.title = "Profile"
+
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    @IBAction func showComponent(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-            UIView.animate(withDuration: 0.5, animations: {
-                self.favoritesView.alpha = 1.0
-                self.personalView.alpha = 0.0
-            })
-        }
-        else {
-            UIView.animate(withDuration: 0.5, animations: {
-                self.favoritesView.alpha = 0.0
-                self.personalView.alpha = 1.0
-            })
-        }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return showedLectures.count
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath)
+        /*
+         cell.config(forLecture: showedLectures[indexPath.row] )
+         */
+        
+        return cell
+    }
+    
+    @IBAction func showComponent(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case Index.favourites.rawValue:
+            showedLectures = DataModel.shared.lectures.filter({ $0.title == "Ciao" })
+            
+        case Index.personal.rawValue:
+            showedLectures = DataModel.shared.lectures.filter({ $0.host === DataModel.shared.me })
+            
+        default:
+            showedLectures = []
+        }
+        
+            profileTableView.reloadData()
+    }
+    
+    
+    
+    enum Index : Int {
+        case favourites = 0
+        case personal = 1
+    }
     
 }

@@ -28,6 +28,13 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
         searchTableView.backgroundColor = UIColor.clear
     }
 
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        navigationItem.title = "Search"
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -64,10 +71,10 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-        return screenSize.height*0.25
+        return screenSize.height*0.22
         }
         else {
-            return screenSize.height*0.27
+            return screenSize.height*0.25
         }
     }
     
@@ -76,15 +83,33 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
         return sectionSpacingHeigth
     }
     
+    
+    
     // method to run when table view cell is tapped
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.section).")
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         
-        //self.performSegue(withIdentifier: "EventVC", sender: self)
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-        
+        if indexPath.section == 0 {
+            return nil
+        }
+        else {
+        let cell = tableView.cellForRow(at: indexPath) as? LectureTableViewCell
+            cell?.layer.shadowColor = UIColor.white.cgColor
+            cell?.layer.shadowOffset = CGSize(width: -1, height: 1)
+            
+//            cell?.contentView.layer.borderWidth = 1
+//            cell?.contentView.layer.borderColor = UIColor.white.cgColor
+//          
+            performSegue(withIdentifier: "goToLecture", sender: self)
+        print("you tapped the cell \(indexPath.row)")
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() +  1, execute: {
+            cell?.contentView.layer.shadowColor = UIColor.clear.cgColor
+                
+            })
+            return nil
+        }
     }
+
+    
 /*
     // Make the background color show through
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

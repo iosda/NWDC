@@ -31,12 +31,8 @@ class EventTableViewCell: UITableViewCell {
     
     func config(forEvent event: Event){
         self.contentCellView.backgroundColor = UIColor.clear
-
         self.contentCellView.clipsToBounds = true
-
-        
         self.titleLabel.text = event.title
-        
         self.contentCellView.layer.cornerRadius = min(self.contentCellView.bounds.width, self.contentCellView.bounds.height) * 0.1
        
         let dateFormatter = DateFormatter()

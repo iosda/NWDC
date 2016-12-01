@@ -12,11 +12,13 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     /* outlets and variables */
     @IBOutlet weak var homeTableView: UITableView!
-    var numberOfCells = 8
+    var numberOfCells = 6
     let cellSpacingHeight: CGFloat = 4
     let cellHeight: CGFloat = 140
-    
     let screenSize: CGRect = UIScreen.main.bounds
+
+    
+    var images = [UIImage(named:"giacomo1"),UIImage(named:"gicomo2"),UIImage(named:"giacomo3"),UIImage(named:"giacomo1"),UIImage(named:"gicomo2"),UIImage(named:"giacomo3")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,12 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        navigationItem.title = "Home"
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -73,7 +81,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let cell = tableView.cellForRow(at: indexPath) as? EventTableViewCell
         cell?.contentCellView.layer.borderWidth = 1
         cell?.contentCellView.layer.borderColor = UIColor.white.cgColor
-    
+
         self.performSegue(withIdentifier: "EventVC", sender: self)
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {

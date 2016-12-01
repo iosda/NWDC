@@ -52,12 +52,12 @@ class LectureTableViewCell: UITableViewCell {
         self.user3.clipsToBounds = true
         self.user4.clipsToBounds = true
         self.user5.clipsToBounds = true
-//
-//        self.user1.contentMode = .scaleAspectFit
-//        self.user2.contentMode = .scaleAspectFit
-//        self.user3.contentMode = .scaleAspectFit
-//        self.user4.contentMode = .scaleAspectFit
-//        self.user5.contentMode = .scaleAspectFit
+
+        self.user1.contentMode = .scaleAspectFill
+        self.user2.contentMode = .scaleAspectFill
+        self.user3.contentMode = .scaleAspectFill
+        self.user4.contentMode = .scaleAspectFill
+        self.user5.contentMode = .scaleAspectFill
         
         self.user1.layer.masksToBounds = true
 
