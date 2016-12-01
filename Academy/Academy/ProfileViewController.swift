@@ -10,26 +10,43 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    /* outlets and variables */
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    let screenSize = UIScreen.main.bounds
+    @IBOutlet weak var favoritesView: UIView!
+    @IBOutlet weak var personalView: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //setting up the segment control frame
+        segmentControl.frame.size.height = screenSize.height*0.06
+        segmentControl.frame.size.width = screenSize.width*0.7
+        
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func showComponent(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.favoritesView.alpha = 1.0
+                self.personalView.alpha = 0.0
+            })
+        }
+        else {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.favoritesView.alpha = 0.0
+                self.personalView.alpha = 1.0
+            })
+        }
     }
-    */
-
+    
+    
 }

@@ -79,13 +79,17 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     // method to run when table view cell is tapped
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.section).")
-        
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        let cell = tableView.cellForRow(at: indexPath) as? EventTableViewCell
+        cell?.contentCellView.layer.borderWidth = 1
+        cell?.contentCellView.layer.borderColor = UIColor.white.cgColor
+    
         self.performSegue(withIdentifier: "EventVC", sender: self)
         
-        tableView.deselectRow(at: indexPath, animated: true)
-
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
+            cell?.contentCellView.layer.borderWidth = 0
+        })
+        
+        return nil
     }
-    
 }

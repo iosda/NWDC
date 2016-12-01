@@ -37,7 +37,7 @@ class LectureTableViewCell: UITableViewCell {
         self.backgroundColor = UIColor.clear
         
         self.lectureCellView.layer.cornerRadius = self.bounds.height*0.1
-        self.lectureCellView.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.95, alpha:0.4)
+        self.lectureCellView.backgroundColor =  UIColor(red:23/255, green:23/255, blue:23/255, alpha:1.0)
         
         /*
         self.layer.shadowColor = UIColor.black.cgColor

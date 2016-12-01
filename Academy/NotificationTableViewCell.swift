@@ -32,7 +32,7 @@ class NotificationTableViewCell: UITableViewCell {
         self.containerView.backgroundColor = UIColor.clear
         
         self.containerView.layer.cornerRadius = min(self.containerView.bounds.width, self.containerView.bounds.height) * 0.1
-        self.containerView.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.95, alpha:0.4)
+        self.containerView.backgroundColor = UIColor(red:23/255, green:23/255, blue:23/255, alpha:1.0)
 
         self.notificationLabel.text = "The Vapor lecture has been added on Monday at 16:00 in the Board Room"
     
