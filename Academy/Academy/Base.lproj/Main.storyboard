@@ -198,7 +198,9 @@
                             <constraint firstItem="324-jk-9AR" firstAttribute="width" secondItem="hds-1V-9FM" secondAttribute="width" multiplier="0.9" id="ujK-HU-gkb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4np-FL-Clu"/>
+                    <navigationItem key="navigationItem" id="4np-FL-Clu">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="EfK-Ud-doE"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateCollectionView" destination="p53-YD-xLD" id="pny-nd-uR2"/>
                         <outlet property="descriptionTextView" destination="QXO-fn-Bxa" id="KhC-wl-VTx"/>
@@ -355,7 +357,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="tabBarHome" id="IhU-qu-cl3"/>
                     <connections>
                         <outlet property="homeTableView" destination="2GV-vx-dOr" id="m5B-hf-Iy4"/>
-                        <segue destination="HiB-Ks-jYh" kind="show" identifier="EventVC" action="showDetailViewController:sender:" id="SEH-hE-7bB"/>
+                        <segue destination="HiB-Ks-jYh" kind="push" identifier="EventVC" id="SEH-hE-7bB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQC-Mq-V7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -781,26 +783,26 @@
                                             <constraint firstAttribute="width" secondItem="SP5-kU-uw8" secondAttribute="height" multiplier="1:1" id="2bK-TU-wul"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FU0-ls-H7Q">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="FU0-ls-H7Q">
                                         <rect key="frame" x="201" y="13" width="166" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MORNING CLASS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNZ-by-SeX">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MORNING CLASS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="GNZ-by-SeX">
                                         <rect key="frame" x="201" y="139" width="166" height="16"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                                         <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STUDENT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Iv-71-2Dn">
-                                        <rect key="frame" x="201" y="115" width="166" height="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="STUDENT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="6Iv-71-2Dn">
+                                        <rect key="frame" x="201" y="123" width="166" height="16"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                                         <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBV-nj-UGE">
-                                        <rect key="frame" x="201" y="42" width="166" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="SBV-nj-UGE">
+                                        <rect key="frame" x="201" y="34" width="166" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                         <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -810,8 +812,10 @@
                                 <constraints>
                                     <constraint firstItem="SP5-kU-uw8" firstAttribute="leading" secondItem="HJ1-2o-rVB" secondAttribute="leading" constant="16" id="0RZ-1R-36r"/>
                                     <constraint firstItem="SBV-nj-UGE" firstAttribute="trailing" secondItem="FU0-ls-H7Q" secondAttribute="trailing" id="1g0-5Q-JD3"/>
+                                    <constraint firstItem="GNZ-by-SeX" firstAttribute="top" secondItem="6Iv-71-2Dn" secondAttribute="bottom" id="DKs-LC-GS4"/>
                                     <constraint firstItem="6Iv-71-2Dn" firstAttribute="trailing" secondItem="GNZ-by-SeX" secondAttribute="trailing" id="EHd-Ia-xUB"/>
                                     <constraint firstItem="FU0-ls-H7Q" firstAttribute="leading" secondItem="SP5-kU-uw8" secondAttribute="trailing" constant="43" id="EUF-ZN-ukR"/>
+                                    <constraint firstItem="SBV-nj-UGE" firstAttribute="top" secondItem="FU0-ls-H7Q" secondAttribute="bottom" id="Gee-FI-CPo"/>
                                     <constraint firstItem="GNZ-by-SeX" firstAttribute="bottom" secondItem="SP5-kU-uw8" secondAttribute="bottom" id="H1T-s6-pg9"/>
                                     <constraint firstAttribute="trailing" secondItem="FU0-ls-H7Q" secondAttribute="trailing" constant="8" id="Iv4-fY-fIA"/>
                                     <constraint firstAttribute="bottom" secondItem="GNZ-by-SeX" secondAttribute="bottom" constant="12" id="KaI-QT-opH"/>
@@ -820,10 +824,8 @@
                                     <constraint firstAttribute="trailing" secondItem="GNZ-by-SeX" secondAttribute="trailing" constant="8" id="VBe-d2-aAm"/>
                                     <constraint firstItem="GNZ-by-SeX" firstAttribute="leading" secondItem="6Iv-71-2Dn" secondAttribute="leading" id="Y2B-Hf-aMT"/>
                                     <constraint firstItem="SP5-kU-uw8" firstAttribute="top" secondItem="HJ1-2o-rVB" secondAttribute="top" constant="13" id="a0s-uX-XK9"/>
-                                    <constraint firstItem="SBV-nj-UGE" firstAttribute="top" secondItem="FU0-ls-H7Q" secondAttribute="bottom" constant="8" id="aug-Nj-zPv"/>
                                     <constraint firstItem="6Iv-71-2Dn" firstAttribute="leading" secondItem="SBV-nj-UGE" secondAttribute="leading" id="phk-8w-JQd"/>
                                     <constraint firstAttribute="bottom" secondItem="SP5-kU-uw8" secondAttribute="bottom" constant="12" id="t4j-sj-UlZ"/>
-                                    <constraint firstItem="GNZ-by-SeX" firstAttribute="top" secondItem="6Iv-71-2Dn" secondAttribute="bottom" constant="8" id="tzc-6n-qPk"/>
                                     <constraint firstItem="FU0-ls-H7Q" firstAttribute="top" secondItem="SP5-kU-uw8" secondAttribute="top" id="zuu-SD-2J2"/>
                                 </constraints>
                             </view>
