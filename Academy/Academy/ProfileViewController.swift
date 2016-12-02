@@ -26,7 +26,8 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
     var numberOfCells = 6
     let screenSize = UIScreen.main.bounds
     var showedLectures : [Lecture] = []
-    var user = User(name: "Giacomo Leopizzi", image: UIImage(named: "giacomoIcon")!)
+    var user = DataModel.shared.me
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,40 +45,24 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
         self.profileImage.image = self.user.image
         self.profileImage.layer.cornerRadius = profileImage.bounds.height/2
         self.profileImage.contentMode = .scaleAspectFill
+        self.emailLabel.text = self.user.email
 
     }
-    
-    // animations 1
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        nameLabel.alpha = 0.0
-        emailLabel.alpha = 0.0
-        studentLabel.alpha = 0.0
-        classLabel.alpha = 0.0
-        firstLine.alpha = 0.0
-        segmentControl.alpha = 0.0
-        profileImage.alpha = 0.0
-    }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
         self.navigationController?.visibleViewController?.navigationItem.title = "Profile"
+       
+        // Federica Ventriglia Animations 
         
-        UIView.animate(withDuration: 0.2, animations: { self.nameLabel.alpha = 1.0 })
-        UIView.animate(withDuration: 0.2, animations: { self.profileImage.alpha = 1.0 })
-
-        UIView.animate(withDuration: 0.4, animations: { self.emailLabel.alpha = 1.0 })
-
-        UIView.animate(withDuration: 0.5, animations: { self.studentLabel.alpha = 1.0 })
-
-        UIView.animate(withDuration: 0.6, animations: { self.classLabel.alpha = 1.0 })
-
-        UIView.animate(withDuration: 0.7, animations: { self.firstLine.alpha = 1.0 })
-        
-        UIView.animate(withDuration: 0.8 , animations: {self.segmentControl.alpha = 1.0})
+        FVAnimations.dissolve(forBuildInOfTheView: nameLabel, withDuration: 0.2)
+        FVAnimations.dissolve(forBuildInOfTheView: profileImage, withDuration: 0.2)
+        FVAnimations.dissolve(forBuildInOfTheView: emailLabel, withDuration: 0.4)
+        FVAnimations.dissolve(forBuildInOfTheView: studentLabel, withDuration: 0.5)
+        FVAnimations.dissolve(forBuildInOfTheView: classLabel, withDuration: 0.6)
+        FVAnimations.dissolve(forBuildInOfTheView: firstLine, withDuration: 0.7)
+        FVAnimations.dissolve(forBuildInOfTheView: segmentControl, withDuration: 0.8)
 
     }
 
@@ -96,9 +81,7 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as! LectureTableViewCell
-        /*
-         cell.config(forLecture: showedLectures[indexPath.row] )
-         */
+        // cell.config(forLecture: showedLectures[indexPath.row] )
         cell.config()
         return cell
     }

@@ -27,38 +27,19 @@ class EventViewController: UIViewController,UICollectionViewDelegate,UICollectio
     var nameDays = ["M","T","W"]
     
     
-    //animation
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        self.dateCollectionView.alpha = 0.0
-        self.lecturesTableView.alpha = 0.0
-        self.titleLabel.alpha = 0.0
-        self.firstLine.alpha = 0.0
-        self.secondLine.alpha = 0.0
-        self.descriptionTextView.alpha = 0.0
-        self.speakersLabel.alpha = 0.0
-        
-    }
+   
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        UIView.animate(withDuration: 0.2, animations: { self.titleLabel.alpha = 1.0 })
+        // Federica Ventriglia Animations 
+        FVAnimations.dissolve(forBuildInOfTheView: self.titleLabel, withDuration: 0.2)
+        FVAnimations.dissolve(forBuildInOfTheView: self.descriptionTextView, withDuration: 0.3)
+        FVAnimations.dissolve(forBuildInOfTheView: self.firstLine, withDuration: 0.4)
+        FVAnimations.dissolve(forBuildInOfTheView: self.dateCollectionView, withDuration: 0.5)
+        FVAnimations.dissolve(forBuildInOfTheView: self.secondLine, withDuration: 0.6)
+        FVAnimations.dissolve(forBuildInOfTheView: self.speakersLabel, withDuration: 0.7)
+        FVAnimations.dissolve(forBuildInOfTheView: self.lecturesTableView, withDuration: 0.2)
         
-        UIView.animate(withDuration: 0.3, animations: { self.descriptionTextView.alpha = 1.0 })
-        
-        UIView.animate(withDuration: 0.4, animations: { self.firstLine.alpha = 1.0 })
-        
-        UIView.animate(withDuration: 0.5, animations: { self.dateCollectionView.alpha = 1.0 })
-        
-        UIView.animate(withDuration: 0.6, animations: { self.secondLine.alpha = 1.0 })
-        
-        UIView.animate(withDuration: 0.7, animations: { self.speakersLabel.alpha = 1.0 })
-        
-        UIView.animate(withDuration: 0.2, animations: { self.lecturesTableView.alpha = 1.0 })
-        
-
     }
     
     override func viewDidLoad() {
@@ -81,12 +62,11 @@ class EventViewController: UIViewController,UICollectionViewDelegate,UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dateCell", for: indexPath) as! DateCollectionViewCell
         
-        
+        cell.dateButton.titleLabel?.textColor = UIColor(red: 142/255, green: 142/255, blue: 142/255, alpha: 1.0)
         cell.dateButton.titleLabel?.text = days[indexPath.row]
         cell.dayLabel.text = nameDays[indexPath.row]
         
         if !hasMoved {
-            print("DONE _____________________________________________________________________________________")
             let indexPath = IndexPath(item: (numberOfDays - 1) / 2, section: 0)
             self.dateCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: false)
             hasMoved = true
@@ -98,7 +78,8 @@ class EventViewController: UIViewController,UICollectionViewDelegate,UICollectio
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 64 , height: 90)
+        let dimension = self.dateCollectionView.bounds.height * 0.88
+        return CGSize(width: dimension*0.46 , height: dimension)
     }
 
     

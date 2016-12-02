@@ -33,8 +33,6 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
         super.viewDidAppear(true)
         
         self.navigationController?.visibleViewController?.navigationItem.title = "Search"
-//        self.navigationController?.navigationItem.title = "Search"
-//        self.navigationItem.title = "Search"
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,6 +70,7 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+      
         if indexPath.section == 0 {
         return screenSize.height*0.22
         }
@@ -98,31 +97,22 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
             cell?.layer.shadowColor = UIColor.white.cgColor
             cell?.layer.shadowOffset = CGSize(width: -1, height: 1)
             
-//            cell?.contentView.layer.borderWidth = 1
-//            cell?.contentView.layer.borderColor = UIColor.white.cgColor
-//          
+            cell?.layer.borderWidth = 1
+            cell?.layer.borderColor = UIColor.white.cgColor
+          
             performSegue(withIdentifier: "goToLecture", sender: self)
         print("you tapped the cell \(indexPath.row)")
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() +  1, execute: {
-            cell?.contentView.layer.shadowColor = UIColor.clear.cgColor
-                
+            cell?.contentView.layer.borderWidth = 0
             })
             return nil
         }
     }
 
-    
-/*
-    // Make the background color show through
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = UIColor.clear
-        return headerView
-    }
-  */ 
     //title section
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
        tableView.tableHeaderView?.sizeToFit()
+        
         switch section {
         case 0:
             return "USERS"
@@ -136,17 +126,13 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     // animation
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+
+        FVAnimations.dissolve(forBuildInOfTheView: cell)
         
-        cell.alpha = 0.0
-        //
         //       let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 10, 0)
         //        cell.layer.transform = rotationTransform
-        //
-        UIView.animate(withDuration: 1.0, animations: {
-            cell.alpha = 1.0
-            
             //cell.layer.transform = CATransform3DIdentity
-        })
+    
     }
 
    

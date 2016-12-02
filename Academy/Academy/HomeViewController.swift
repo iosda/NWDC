@@ -17,7 +17,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     let cellHeight: CGFloat = 140
     let screenSize: CGRect = UIScreen.main.bounds
 
-    
+    var fakeUser = DataModel.shared.me
+
     var images = [UIImage(named:"giacomo1"),UIImage(named:"gicomo2"),UIImage(named:"giacomo3"),UIImage(named:"giacomo1"),UIImage(named:"gicomo2"),UIImage(named:"giacomo3")]
 
     override func viewDidLoad() {
@@ -34,21 +35,11 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         self.navigationController?.visibleViewController?.navigationItem.title = "Home"
         
-        UIView.animate(withDuration: 1.0, animations: {
-            self.homeTableView.alpha = 1.0
-        })
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    /* animation test */
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        homeTableView.alpha = 0.0
     }
     
     
@@ -72,11 +63,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventTableViewCell
         
-        
-        
-        let testEvent = Event(title: "Share Knowledge", image: UIImage(named: "giacomoIcon")!, date: Date())
-        
-        cell.config(forEvent:  testEvent)
+        cell.config(forEvent:  DataModel.shared.testEvent)
         return cell
         
     }
@@ -93,6 +80,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         let cell = tableView.cellForRow(at: indexPath) as? EventTableViewCell
+        
         cell?.contentCellView.layer.borderWidth = 1
         cell?.contentCellView.layer.borderColor = UIColor.white.cgColor
 
@@ -108,17 +96,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     //animation
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-       
-        cell.alpha = 0.0
-//        
-//       let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 10, 0)
-//        cell.layer.transform = rotationTransform
-//        
-        UIView.animate(withDuration: 1.0, animations: {
-            cell.alpha = 1.0
-            
-            //cell.layer.transform = CATransform3DIdentity
-        })
+        FVAnimations.dissolve(forBuildInOfTheView: cell)
     }
     
     

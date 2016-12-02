@@ -17,7 +17,10 @@ final class DataModel {
     
     public var lectures : [Lecture] = []
     
-    public var me : User = User(name: "Federica", image: UIImage(named: "giacomoIcon")! )
+    public var me : User = User(name: "Federica", image: UIImage(named: "giacomoIcon")!, email: "gi.le@gmail.com")
+    
+    public var testEvent = Event(title: "Share Knowledge", image: UIImage(named: "giacomoIcon")!, date: Date())
+    public var testEvent2 = Event(title: "Monday 15th", image: UIImage(named:"giacomo1")!, date: Date())
     
     private init() { }
     

@@ -41,9 +41,35 @@ class Lecture {
 class User {
     let name : String
     let image : UIImage
+    let email: String
  
-    public init(name: String, image: UIImage) {
+    public init(name: String, image: UIImage, email: String) {
         self.name = name
         self.image = image
+        self.email = email
+    }
+    
+}
+
+class Device {
+    let uniqueID : Int
+    let type: String
+    let image: UIImage
+    
+    public init (uniqueID: Int, type: String, image: UIImage){
+        self.uniqueID = uniqueID
+        self.type = type
+        self.image = image
+    }
+    
+}
+
+class Comment {
+    let user: User
+    let commentText: String
+    
+    public init (user: User, commentText: String) {
+        self.user = user
+        self.commentText = commentText
     }
 }

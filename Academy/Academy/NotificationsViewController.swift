@@ -14,15 +14,13 @@ class NotificationsViewController: UIViewController,UITableViewDelegate,UITableV
     /* outlets and variables */
     @IBOutlet weak var notificationsTableView: UITableView!
     var numberOfCells = 6
-    var notificationTime: Bool = false
-    
+    var notificationTime: Bool = true
     let screenSize: CGRect = UIScreen.main.bounds
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         notificationsTableView.backgroundColor = UIColor.clear
     }
     
@@ -33,11 +31,6 @@ class NotificationsViewController: UIViewController,UITableViewDelegate,UITableV
         self.navigationController?.visibleViewController?.navigationItem.title = "Notifications"
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -69,17 +62,8 @@ class NotificationsViewController: UIViewController,UITableViewDelegate,UITableV
     
     // animation
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        cell.alpha = 0.0
-        //
-        //       let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 10, 0)
-        //        cell.layer.transform = rotationTransform
-        //
-        UIView.animate(withDuration: 1.0, animations: {
-            cell.alpha = 1.0
-            
-            //cell.layer.transform = CATransform3DIdentity
-        })
+       FVAnimations.dissolve(forBuildInOfTheView: cell)
+    
     }
     
 }

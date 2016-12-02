@@ -25,6 +25,10 @@
 		F27880991DED9629001B9603 /* LectureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27880981DED9629001B9603 /* LectureViewController.swift */; };
 		F278809B1DED9632001B9603 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F278809A1DED9632001B9603 /* LoginViewController.swift */; };
 		F278809D1DED9642001B9603 /* AddLectureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F278809C1DED9642001B9603 /* AddLectureViewController.swift */; };
+		F28186291DF1AFDC00DD7490 /* FVAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28186281DF1AFDC00DD7490 /* FVAnimations.swift */; };
+		F281862D1DF1C72C00DD7490 /* UIView-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F281862C1DF1C72C00DD7490 /* UIView-Extension.swift */; };
+		F281862F1DF1C90700DD7490 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F281862E1DF1C90700DD7490 /* CommentsTableViewCell.swift */; };
+		F28186341DF1DE4700DD7490 /* UIImageView-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28186331DF1DE4700DD7490 /* UIImageView-Extension.swift */; };
 		F2D764231DEEEB9D0069C34A /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D764221DEEEB9D0069C34A /* NotificationTableViewCell.swift */; };
 		F2D764271DEF33280069C34A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D764261DEF33280069C34A /* Event.swift */; };
 		F2F360BC1DF03D860040CCB9 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F360BB1DF03D860040CCB9 /* FavoritesView.swift */; };
@@ -52,6 +56,10 @@
 		F27880981DED9629001B9603 /* LectureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureViewController.swift; sourceTree = "<group>"; };
 		F278809A1DED9632001B9603 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F278809C1DED9642001B9603 /* AddLectureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLectureViewController.swift; sourceTree = "<group>"; };
+		F28186281DF1AFDC00DD7490 /* FVAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVAnimations.swift; sourceTree = "<group>"; };
+		F281862C1DF1C72C00DD7490 /* UIView-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView-Extension.swift"; sourceTree = "<group>"; };
+		F281862E1DF1C90700DD7490 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
+		F28186331DF1DE4700DD7490 /* UIImageView-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView-Extension.swift"; sourceTree = "<group>"; };
 		F2D764221DEEEB9D0069C34A /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationTableViewCell.swift; path = ../NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		F2D764261DEF33280069C34A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F2F360BB1DF03D860040CCB9 /* FavoritesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
@@ -77,6 +85,7 @@
 				F26A00251DEDDB8600832CDE /* UserTableViewCell.swift */,
 				F26A00271DEDDB8F00832CDE /* LectureTableViewCell.swift */,
 				F274C6C31DF074C400886924 /* DateCollectionViewCell.swift */,
+				F281862E1DF1C90700DD7490 /* CommentsTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -100,6 +109,7 @@
 		F27880781DED906F001B9603 /* Academy */ = {
 			isa = PBXGroup;
 			children = (
+				F28186281DF1AFDC00DD7490 /* FVAnimations.swift */,
 				F278808D1DED93A6001B9603 /* Extensions */,
 				F278809E1DED9652001B9603 /* Controllers */,
 				F26A00241DEDCE3500832CDE /* Cells */,
@@ -119,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				F274C6C51DF0762400886924 /* UIButton-Extension.swift */,
+				F281862C1DF1C72C00DD7490 /* UIView-Extension.swift */,
+				F28186331DF1DE4700DD7490 /* UIImageView-Extension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -220,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F28186291DF1AFDC00DD7490 /* FVAnimations.swift in Sources */,
 				F274C6C61DF0762400886924 /* UIButton-Extension.swift in Sources */,
 				F2D764231DEEEB9D0069C34A /* NotificationTableViewCell.swift in Sources */,
 				F26A00281DEDDB8F00832CDE /* LectureTableViewCell.swift in Sources */,
@@ -230,13 +243,16 @@
 				F2F360BE1DF03D8D0040CCB9 /* PersonalView.swift in Sources */,
 				F27880991DED9629001B9603 /* LectureViewController.swift in Sources */,
 				F26A00261DEDDB8600832CDE /* UserTableViewCell.swift in Sources */,
+				F281862D1DF1C72C00DD7490 /* UIView-Extension.swift in Sources */,
 				F26A001F1DEDCC9100832CDE /* DatModel.swift in Sources */,
 				F27880931DED960E001B9603 /* NotificationsViewController.swift in Sources */,
 				F27880971DED9622001B9603 /* EventViewController.swift in Sources */,
 				F278809D1DED9642001B9603 /* AddLectureViewController.swift in Sources */,
 				F2F360BC1DF03D860040CCB9 /* FavoritesView.swift in Sources */,
+				F281862F1DF1C90700DD7490 /* CommentsTableViewCell.swift in Sources */,
 				F278807A1DED906F001B9603 /* AppDelegate.swift in Sources */,
 				F27880911DED9608001B9603 /* SearchViewController.swift in Sources */,
+				F28186341DF1DE4700DD7490 /* UIImageView-Extension.swift in Sources */,
 				F274C6C41DF074C400886924 /* DateCollectionViewCell.swift in Sources */,
 				F278808F1DED9602001B9603 /* HomeViewController.swift in Sources */,
 			);
