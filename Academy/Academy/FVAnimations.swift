@@ -33,7 +33,7 @@ final public class FVAnimations {
     static public func slideUp(forItem view: UIView, withDuration duration: TimeInterval = 0.5) {
         DispatchQueue.main.async {
             
-            let slideTransformation = CATransform3DTranslate( CATransform3DIdentity, 0, -50, 0)
+            let slideTransformation = CATransform3DTranslate( CATransform3DIdentity, 0, -10, 0)
             view.layer.transform = slideTransformation
             UIView.animate(withDuration: duration, animations: {
                 view.layer.transform = CATransform3DIdentity
@@ -44,7 +44,7 @@ final public class FVAnimations {
     static public func slideRight(forItem view: UIView, withDuration duration: TimeInterval = 0.5) {
         DispatchQueue.main.async {
             
-            let slideTransformation = CATransform3DTranslate( CATransform3DIdentity, -50, 0, 0)
+            let slideTransformation = CATransform3DTranslate( CATransform3DIdentity, -10, 0, 0)
             view.layer.transform = slideTransformation
             UIView.animate(withDuration: duration, animations: {
                 view.layer.transform = CATransform3DIdentity
@@ -55,7 +55,7 @@ final public class FVAnimations {
     static public func slideDown(forItem view: UIView, withDuration duration: TimeInterval = 0.5) {
         DispatchQueue.main.async {
     
-            let slideTransformation = CATransform3DTranslate( CATransform3DIdentity, 0, +50, 0)
+            let slideTransformation = CATransform3DTranslate( CATransform3DIdentity, 0, +10, 0)
             view.layer.transform = slideTransformation
             UIView.animate(withDuration: duration, animations: {
                 view.layer.transform = CATransform3DIdentity
@@ -66,7 +66,7 @@ final public class FVAnimations {
     static public func slideLeft(forItem view: UIView, withDuration duration: TimeInterval = 0.5) {
         DispatchQueue.main.async {
             
-            let slideTransformation = CATransform3DTranslate( CATransform3DIdentity, +50, 0, 0)
+            let slideTransformation = CATransform3DTranslate( CATransform3DIdentity, +10, 0, 0)
             view.layer.transform = slideTransformation
             UIView.animate(withDuration: duration, animations: {
                 view.layer.transform = CATransform3DIdentity

@@ -29,12 +29,14 @@ class Lecture {
     let image : UIImage
     let date : Date
     let host: User
+    let location: String
     
-    public init(title: String, image: UIImage, date: Date, host: User) {
+    public init(title: String, image: UIImage, date: Date, host: User, location: String) {
         self.title = title
         self.image = image
         self.date = date
         self.host = host
+        self.location = location
     }
 }
 
